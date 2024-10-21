@@ -1,4 +1,22 @@
+;; -*- coding: utf-8; -*-
+;;; xrmp.el --- Track cursor movement and forward/backward navigation -*- lexical-binding: t; -*-
 
+;; Copyright (C) 2024 Free Software Foundation, Inc.
+;; License: GPL-3.0-or-later
+
+;; Author: ISouthRain
+;; Version: 0.1
+;; Package-Requires: ((emacs "26.1"))
+;; Keywords: cursor, idle, timer
+;; URL: https://github.com/ISouthRain/xrmp
+
+;;; Commentary:
+;;
+;; This is to record where the cursor has stayed, to facilitate forward and backward navigation. This package is implemented by borrowing the function of xref.
+;; How to Use: Enable this `xmap-mode`
+;;             M-x xref-go-back OR xref-go-forward
+
+;;; Code:
 (require 'xref)
 
 (defcustom xrmp-idle-time 5
