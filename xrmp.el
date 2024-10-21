@@ -29,7 +29,7 @@ This will record the current cursor point before executing these functions."
   "Push the current point marker onto the xref marker stack."
   (xref-push-marker-stack (point-marker)))
 
-(defun xrmp--function ()
+(defun xrmp--idle-function ()
   "Execute function if no actions occur within `xrmp-idle-time` seconds."
   (when (and (not (minibufferp)) (not buffer-read-only))
     (xrmp--push-marker-stack)
@@ -41,7 +41,7 @@ This will record the current cursor point before executing these functions."
   (when xrmp--idle-timer
     (cancel-timer xrmp--idle-timer))
   (setq xrmp--idle-timer
-        (run-with-idle-timer xrmp-idle-time nil #'xrmp--function)))
+        (run-with-idle-timer xrmp-idle-time nil #'xrmp--idle-function)))
 
 (defun xrmp-enable-advice ()
   "Add advice to specified functions to push markers onto the xref stack."
