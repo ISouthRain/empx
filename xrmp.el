@@ -49,7 +49,7 @@ This will record the current cursor point before executing these functions."
 
 (defun xrmp--idle-function ()
   "Execute function if no actions occur within `xrmp-idle-time` seconds."
-  (when (and (not (minibufferp)) (not buffer-read-only))
+  (when (not (minibufferp))
     (xrmp--push-marker-stack)
     )
   )
