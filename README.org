@@ -1,0 +1,42 @@
+# -*- coding: utf-8; -*-
+
+* Empx
+Emacs mark point use xref.el, forward and backward navigation.
+
+Empx fully uses the xref.el function, which is the default function provided by Emacs for forward and backward navigation and defining jumps.
+
+Empx extends xref, not just go to defintion, empx can trigger functions based on idle time, and go to defintion marks the current point for forward and backward navigation.
+
+** preview
+[[file:./attach/README/preview.gif]]
+
+** How to use
+#+begin_src emacs-lisp :tangle yes
+(add-to-list 'load-path "~/empx-path/")
+(require 'empx)
+(empx-mode)
+;; And then:
+;; M-x xref-go-forward Or xref-go-back
+#+end_src
+
+** How to record the current point position?
+1. `empx-idle-time` time out.
+
+2. `empx-target-functions` list function.
+
+3. `xref.el` navigation, e.g: xref-find-definitions, xref-find-references
+
+** Custom
+- empx-idle-time
+
+- empx-target-functions
+
+** TODO
+- [ ] Visual navigation
+
+- [ ] support `consult`
+
+** Similar packages
+- `Bookmark.el` (built-in)
+
+- [[https://github.com/alphapapa/dogears.el][GitHub - alphapapa/dogears.el: Never lose your place in Emacs again]]
