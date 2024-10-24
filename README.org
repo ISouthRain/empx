@@ -31,7 +31,7 @@ Empx extends xref, not just go to defintion, empx can trigger functions based on
 
 - empx-target-functions
 
-** TODO
+** TODO List
 - [ ] Visual navigation
 
 - [ ] support `consult`
