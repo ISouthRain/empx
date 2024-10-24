@@ -28,6 +28,8 @@
   '(find-file
     project-find-file
     project-switch-to-buffer
+    goto-line
+    avy-goto-line
     consult-buffer
     consult-outline
     consult-imenu
